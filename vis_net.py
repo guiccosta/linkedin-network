@@ -93,4 +93,6 @@ if buttom_random:
     nt = Network('500px', '500px')
     nt.from_nx(H)
     nt.show('nt.html', local=True)
-
+    HtmlFile = open("nt.html", 'r', encoding='utf-8')
+    source_code = HtmlFile.read() 
+    components.html(source_code, height = 1200,width=1000)
