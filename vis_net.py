@@ -54,7 +54,7 @@ if upload_file is not None:
         nt.show('nt.html', local=True)
         HtmlFile = open("nt.html", 'r', encoding='utf-8')
         source_code = HtmlFile.read() 
-        components.html(source_code, height = 1200,width=1000)
+        components.html(source_code, height=800, width=800)
         
 st.warning("""
 Caso você não se sinta confortável em fazer o upload dos seus dados, clique no botão abaixo para 
@@ -95,4 +95,4 @@ if buttom_random:
     nt.show('nt.html', local=True)
     HtmlFile = open("nt.html", 'r', encoding='utf-8')
     source_code = HtmlFile.read() 
-    components.html(source_code, height = 1200,width=1000)
+    components.html(source_code, height=800, width=800)
