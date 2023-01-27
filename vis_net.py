@@ -51,6 +51,9 @@ if upload_file is not None:
         nt = Network('500px', '500px')
         nt.from_nx(H)
         nt.show('nt.html', local=True)
+        HtmlFile = open("nt.html", 'r', encoding='utf-8')
+        source_code = HtmlFile.read() 
+        components.html(source_code, height = 1200,width=1000)
         
 st.warning("""
 Caso você não se sinta confortável em fazer o upload dos seus dados, clique no botão abaixo para 
