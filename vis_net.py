@@ -50,7 +50,8 @@ if upload_file is not None:
         H.remove_nodes_from(low_deg)
         nt = Network('500px', '500px')
         nt.from_nx(H)
-        nt.show('nt.html', local=False)
+        nt.show('nt.html', local=True)
+        
 st.warning("""
 Caso você não se sinta confortável em fazer o upload dos seus dados, clique no botão abaixo para 
 utilizar dados aleatórios
@@ -87,5 +88,5 @@ if buttom_random:
     H.remove_nodes_from(low_deg)
     nt = Network('500px', '500px')
     nt.from_nx(H)
-    nt.show('nt.html', local=False)
+    nt.show('nt.html', local=True)
 
