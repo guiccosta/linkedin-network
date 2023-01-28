@@ -5,12 +5,12 @@ from pyvis.network import Network
 import itertools
 
 
-def create_network(connections):
+def create_network(connections:pandas.DataFrame):
     """
     Retorna uma rede das conexões provenientes do arquivo Connections.csv fornecido pelo usuário, obtido
     diretamente do LinkedIn.
-    :param connections: dataframe .csv
-    :return: H networkx graph
+    :param connections: pandas.DataFrame
+    :return: networkx.classes.graph.Graph
     """
 
     h = nx.Graph(notebook=True)
