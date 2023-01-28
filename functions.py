@@ -20,8 +20,12 @@ def create_network(connections):
 
     name = dict(connections['First Name'])
     company = dict(connections['Company'])
+    position = dict(connections['Position'])
 
-    nx.set_node_attributes(h, name, "title")
+    nx.set_node_attributes(h, name, "name")
+    nx.set_node_attributes(h, position, "position")
+    title = {k:str(name[k])+'\n'+str(company[k])+'\n'+str(position[k]) for k in name}
+    nx.set_node_attributes(h, title, 'title')
     nx.set_node_attributes(h, company, "group")
 
     # Criando um nó para você já que no arquivo Connections.csv não possui essa informação
