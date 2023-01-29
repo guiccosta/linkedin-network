@@ -20,7 +20,7 @@ if upload_file is not None:
     if button is False:
         st.dataframe(connections)
 
-    if button:
+    else:
         H = create_network(connections)
         visualize_network(H)
 
