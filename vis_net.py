@@ -21,7 +21,7 @@ if upload_file is not None:
         st.dataframe(connections)
 
     else:
-        H = create_network(connections)
+        H = create_network(connections, True)
         visualize_network(H)
 
 st.warning("""
@@ -31,7 +31,7 @@ utilizar dados aleatórios
 
 button_random = st.button('Visualizar rede com dados aleatórios - **_Aguarda a barra de progresso carregar_**')
 
-if button_random:
+if button_random:   
     random_file = 'Connections-random-names.csv'
     connections = pd.read_csv(random_file)
     H = create_network(connections)

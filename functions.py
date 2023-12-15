@@ -5,10 +5,11 @@ from pyvis.network import Network
 import itertools
 
 
-def create_network(connections:pandas.DataFrame):
+def create_network(connections, low_deg: bool = True):
     """
     Retorna uma rede das conexões provenientes do arquivo Connections.csv fornecido pelo usuário, obtido
     diretamente do LinkedIn.
+    :param low_deg: boolean
     :param connections: pandas.DataFrame
     :return: networkx.classes.graph.Graph
     """
@@ -48,9 +49,9 @@ def create_network(connections:pandas.DataFrame):
         # criando relacionamento entre as pessoas que trabalham na mesma Company
         edges_same_company = list(itertools.combinations(nodes, 2))
         h.add_edges_from(edges_same_company)
-
-    low_deg = [node for node in h.nodes if len(list(nx.neighbors(h, node))) == 1]
-    h.remove_nodes_from(low_deg)
+    if low_deg:
+        low_deg = [node for node in h.nodes if len(list(nx.neighbors(h, node))) == 1]
+        h.remove_nodes_from(low_deg)
     return h
 
 
